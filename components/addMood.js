@@ -6,6 +6,7 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
+
 export default class addMood extends Component {
 
   constructor(props) {
