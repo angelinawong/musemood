@@ -6,19 +6,38 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
+
 export default class addMood extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = { textdesc: 0 }
+  }
+
     render() {
         return (
             <View key={this.props.keyval} style={styles.mood}>
-                <Text style={styles.moodText}>{this.props.val.Mood}</Text>
+
+                <TouchableOpacity style={styles.moodText}
+                  onPress={this.onPress}>
+                  <Text>{this.props.val.Mood}</Text>
+                </TouchableOpacity>
+
                 <TouchableOpacity onPress={this.props.deleteMethod} style={styles.moodDelete}>
                     <Text style={styles.moodDeleteText}>Delete</Text>
                 </TouchableOpacity>
+
+                <View><Text>{this.state.textdesc}</Text></View>
             </View>
         );
     }
-}
 
+    onPress = () => {
+      this.setState({
+        textdesc: this.state.textdesc+1
+      })
+    }
+}
 
 const styles = StyleSheet.create({
     mood: {
