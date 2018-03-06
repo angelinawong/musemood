@@ -113,8 +113,8 @@ const styles = StyleSheet.create({
     addButton: {
         position: 'absolute',
         zIndex: 11,
-        alignSelf: 'center',
-        bottom: 30,
+        right: 20,
+        bottom: 90,
         backgroundColor: '#1BBCFF',
         width: 70,
         height: 70,
