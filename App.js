@@ -9,7 +9,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import addMood from './component/addMood.js';
+import addMood from './components/addMood.js';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
