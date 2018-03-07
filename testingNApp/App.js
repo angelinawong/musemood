@@ -8,6 +8,7 @@ import {
   ScrollView,
   TouchableOpacity
 } from 'react-native';
+//import { StackNavigator } from 'react-navigation';
 
 import Addmood from './component/Addmood';
 
@@ -17,6 +18,7 @@ const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
+
 
 export default class App extends Component {
 
@@ -54,12 +56,12 @@ export default class App extends Component {
                     <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
             </View>
+
         );
     }
 
     addMood(){
         if(this.state.moodText){
-            var d = new Date();
             this.state.moodArray.push({
                 'Mood': this.state.moodText
             });
@@ -80,7 +82,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     header: {
-        backgroundColor: '#E91E63',
+        backgroundColor: '#FF601B',
         alignItems: 'center',
         justifyContent:'center',
         borderBottomWidth: 10,
@@ -106,7 +108,7 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         color: '#fff',
         padding: 20,
-        backgroundColor: '#252525',
+        backgroundColor: '#FF601B',
         borderTopWidth:2,
         borderTopColor: '#ededed'
     },
@@ -115,7 +117,7 @@ const styles = StyleSheet.create({
         zIndex: 11,
         right: 20,
         bottom: 90,
-        backgroundColor: '#E91E63',
+        backgroundColor: '#1BBCFF',
         width: 70,
         height: 70,
         borderRadius: 35,
