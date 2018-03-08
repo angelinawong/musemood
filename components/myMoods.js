@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   TextInput,
@@ -10,17 +9,9 @@ import {
 } from 'react-native';
 //import { StackNavigator } from 'react-navigation';
 
-import Addmood from './component/Addmood';
+import Addmood from './components/addMood.js';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-
-export default class App extends Component {
+export default class myMoods extends Component {
 
     constructor(props){
         super(props);
@@ -37,7 +28,7 @@ export default class App extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <Text style={styles.headerText}>Mood</Text>
+                    <Text style={styles.headerText}>My Moods</Text>
                 </View>
                 <ScrollView style={styles.scrollContainer}>
                     {moods}
@@ -45,7 +36,7 @@ export default class App extends Component {
                 <View style={styles.footer}>
                     <TextInput
                         style={styles.textInput}
-                        placeholder='Mood'
+                        placeholder='How are you feeling?'
                         onChangeText={(moodText)=> this.setState({moodText})}
                         value={this.state.moodText}
                         placeholderTextColor='white'
