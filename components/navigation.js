@@ -11,12 +11,12 @@ const RootStack = StackNavigator(
     Home: {
       screen: Home,
     },
-    myMoods: {
+    Moods: {
       screen: myMoods,
     },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Moods',
   }
 );
 
