@@ -7,7 +7,7 @@ import {
   ScrollView,
   TouchableOpacity
 } from 'react-native';
-//import { StackNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 
 import Addmood from './components/addMood.js';
 
@@ -20,6 +20,16 @@ export default class myMoods extends Component {
             moodText: '',
         };
     }
+  
+  static navigationOptions {
+    headerTitle: "My Moods",
+    headerLeft: (
+      <Button>
+        onPress = alert("<")
+      </Button>
+      ) 
+  }
+  
     render() {
         let moods = this.state.moodArray.map((val, key)=>{
             return <Addmood key={key} keyval={key} val={val}
@@ -27,9 +37,6 @@ export default class myMoods extends Component {
         });
         return (
             <View style={styles.container}>
-                <View style={styles.header}>
-                    <Text style={styles.headerText}>My Moods</Text>
-                </View>
                 <ScrollView style={styles.scrollContainer}>
                     {moods}
                 </ScrollView>
@@ -67,22 +74,30 @@ export default class myMoods extends Component {
     }
 }
 
+const RootStack = StackNavigator(
+  {
+    Moods: {
+      screen: myMoods,
+    }
+  },
+  
+  {
+    initialRouteName: 'Moods',
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#FF601B',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: "bold",
+    },
+   },
+  },
+);
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    },
-    header: {
-        backgroundColor: '#FF601B',
-        alignItems: 'center',
-        justifyContent:'center',
-        borderBottomWidth: 10,
-        borderBottomColor: '#ddd'
-    },
-    headerText: {
-        color: 'white',
-        fontSize: 18,
-        padding: 26
     },
     scrollContainer: {
         flex: 1,
