@@ -10,7 +10,7 @@ export default class Addmood extends Component {
 
     constructor(props) {
         super(props)
-        this.state = { textdesc: 0 }
+        this.state = { textdesc:  }
     }
 
     render() {
@@ -24,6 +24,14 @@ export default class Addmood extends Component {
                     <Text>
                         {this.state.textdesc}</Text>
                 </View>
+                <TouchableOpacity  style={styles.moodSearch}
+                                   onPress={this.props.searchMethod}>
+                    <Text style={styles.moodSearch}>Search</Text>
+                </TouchableOpacity>
+                <TouchableOpacity  style={styles.moodView}
+                                   onPress={this.props.viewMethod}>
+                    <Text style={styles.moodView}>View</Text>
+                </TouchableOpacity>
                 <TouchableOpacity  style={styles.moodDelete}
                                    onPress={this.props.deleteMethod}>
                     <Text style={styles.moodDeleteText}>Delete</Text>
@@ -35,7 +43,7 @@ export default class Addmood extends Component {
 
     onPress = () => {
         this.setState({
-            textdesc: this.state.textdesc+1
+            textdesc: this.state.textdesc
         })
     }
 }
