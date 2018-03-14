@@ -68,6 +68,18 @@ export default class myMoods extends Component {
         }
     }
 
+    searchMood(key){
+      this.state.moodArray.splice(key, 1);
+      this.setState({moodArray: this.state.moodArray});
+    }
+}
+    
+    viewMood(key){
+       this.state.moodArray.splice(key, 1);
+       this.setState({moodArray: this.state.moodArray});
+    }
+}
+      
     deleteMood(key){
         this.state.moodArray.splice(key, 1);
         this.setState({moodArray: this.state.moodArray});
